@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-amber-50 h-screen w-screen flex justify-center items-center">
+    
+    <div class="grid gap-6 w-80">
+        <input id="emailInput" type="email" placeholder="Enter email" class="input input-bordered w-full max-w-xs" />
+        <input id="passwordInput" type="password" placeholder="Enter password" class="input input-bordered w-full max-w-xs" />
+        <div id="buttonContainer" class="bg-black text-white flex rounded-md">
+            <button id="button" class="p-4 bg-green-300 w-20 ">Login</button>
+        </div>
+    </div>
+
+    <script>
+        const emailInput = document.getElementById('emailInput');
+        const passwordInput = document.getElementById('passwordInput');
+        const buttonContainer = document.getElementById('buttonContainer');
+        const button = document.getElementById('button');
+
+        button.addEventListener('mouseover', () => {
+            const email = emailInput.value;
+            const password = passwordInput.value;
+
+            if (email === '' || password === '') {
+                buttonContainer.classList.remove('justify-center');
+                buttonContainer.classList.toggle('justify-start');
+                buttonContainer.classList.toggle('justify-end');
+            }else{
+                buttonContainer.classList.add('justify-center');
+            }
+        });
+    </script>
+</body>
+</html>
